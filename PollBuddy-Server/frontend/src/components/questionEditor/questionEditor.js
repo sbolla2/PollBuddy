@@ -8,36 +8,33 @@ export default class QuestionEditor extends Component {
     return (
       <MDBContainer className="question-editor-container">
         <MDBContainer className="question-editor-field-group">
-          <label>Question Title:</label>
-          <input type="text"/>
-        </MDBContainer>
-        <MDBContainer className="question-editor-field-group">
-          <label>Question Text:</label>
-          <input type="text"/>
+          <label htmlFor={"questionText"}>Question Text:</label>
+          <input
+            name="questionText"
+            id="questionText"
+            className="question-text-box textBox"
+          />
         </MDBContainer>
         <MDBContainer className="question-editor-field-group">
           <label>Image (optional):</label>
-          <br/>
           <input type="file" name="file" id="file" className="input-file"/>
           <label htmlFor="file">Browse</label>
         </MDBContainer>
         {/*question text component here*/}
-        <MDBContainer className="question-editor-field-group">
-          <label>Question Points:</label>
-          <br/>
-          <input type="number" className="input-number"/>
+        <MDBContainer className={"question-data-container"}>
+          <span className="question-editor-field-group">
+            <span>Question Points:</span>
+            <input type="number" value={1} className="input-number"/>
+          </span>
+            <span className="question-editor-field-group">
+            <span>Max Choices:</span>
+            <input type="number" value={1} className="input-number"/>
+          </span>
+            <span className="question-editor-field-group">
+            <span>Time limit:</span>
+            <input type="time" className="input-time"/>
+          </span>
         </MDBContainer>
-        <MDBContainer className="question-editor-field-group">
-          <label>Maximum Concurrent Choices:</label>
-          <br/>
-          <input type="number" className="input-number"/>
-        </MDBContainer>
-        <MDBContainer className="question-editor-field-group">
-          <label>Time limit:</label>
-          <br/>
-          <input type="time" className="input-time"/>
-        </MDBContainer>
-
       </MDBContainer>
     );
   }

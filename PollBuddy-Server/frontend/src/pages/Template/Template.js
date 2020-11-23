@@ -3,7 +3,6 @@ import { MDBContainer } from "mdbreact";
 import "mdbreact/dist/css/mdb.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import GroupEditor from "../../components/GroupEditor/GroupEditor";
-import Question from "../../components/Question/Question";
 
 export default class Template extends Component {//this class is an example of how to use get requests so frontend team can eventually connect to backend refer to class creation for post requests
   constructor() {
@@ -35,12 +34,14 @@ export default class Template extends Component {//this class is an example of h
   cannot start working on a completely functional users page
   so this is gonna be a mock page that just gets all classes and displays all their info*/
   render() {
+    console.log(this.state.groups[0]);
     return (
       <MDBContainer className="page">
         {/*<MDBContainer className="box">*/}
         <p className="fontSizeLarge">
           Test:
         </p>
+        {this.state.groups[0] !== undefined ? <GroupEditor id={this.state.groups[0]._id}/> : <MDBContainer/>}
         {/*<MDBContainer className="class-editor">*/}
         {/*  {*/}
         {/*    //display each class in the backend by mapping the groups to class editor components*/}
@@ -51,7 +52,6 @@ export default class Template extends Component {//this class is an example of h
         {/*      }*/}
         {/*    )*/}
         {/*  }*/}
-        {/*</MDBContainer>*/}
         {/*</MDBContainer>*/}
       </MDBContainer>
     );
