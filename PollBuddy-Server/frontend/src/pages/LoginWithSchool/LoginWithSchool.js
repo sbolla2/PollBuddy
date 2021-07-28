@@ -2,13 +2,16 @@ import React, { Component } from "react";
 import { MDBContainer } from "mdbreact";
 import "mdbreact/dist/css/mdb.css";
 import { Link } from "react-router-dom";
-
+import LoadingWheel from "../../components/LoadingWheel/LoadingWheel";
 import SchoolPicker, {schoolLinkDict} from "../../components/SchoolPicker/SchoolPicker";
 
 export default class LoginWithSchool extends Component {
   constructor(props) {
     super(props);
-    this.state = { value: "" };
+    this.state = { 
+      value: "",
+      doneLoading: false 
+    };
     this.schools = [];
   }
 
@@ -39,6 +42,14 @@ export default class LoginWithSchool extends Component {
             <button className="btn button" formAction={ "/api/users/login/" + schoolLinkDict[this.state.value] }>Submit</button>
           </form>
 
+          if(!this.state.doneLoading){
+            return (
+            <MDBContainer className="page">
+                <LoadingWheel/>
+                <button className="button" onClick={this.stopLoading}>End Loading</button>
+            </MDBContainer>
+            );
+           }
         </MDBContainer>
       </MDBContainer>
     );
