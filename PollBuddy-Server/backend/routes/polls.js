@@ -175,12 +175,22 @@ router.post("/:id/submit", checkPollPublic, async (req, res) => {
       Answer: Joi.string().allow(null, "").required() // allow empty string or null
     })
   );
-  const validResult = schema.validate(req.body);
+  
+  //const validResult = schema.validate(req.body);
   // invalidate handling
-  if (validResult.error) {
+  //if (validResult.error) {
     // TODO: The validation doesn't work and was commented out for the demo
     //return res.status(400).send(createResponse(null, validResult.error.details[0].message));
-  }
+  //}
+  const input_info = req.body
+   Joi.validate(input_info, schema, (err, value) => {
+      if (err) {
+          res.status(400).send(err.details);
+      } else {
+          res.status(400).send("Data is validated");
+      }
+  });
+  
   // create new entry
   const entry = {
     //Answers: validResult.value, // TODO: Replaced by below, need to fix the validation
