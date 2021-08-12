@@ -25,9 +25,15 @@ export default class LoginWithSchoolStep2 extends Component {
       lastName: data.lastName,
       userName: data.userName,
       error: error,
-      doneLoading: true,
+      doneLoading: false,
     };
   }
+
+  stopLoading = () => {
+    this.setState({
+      doneLoading: true
+    });
+  };
 
   componentDidMount() {
     this.props.updateTitle("Login With School Step 2");
@@ -49,10 +55,11 @@ export default class LoginWithSchoolStep2 extends Component {
           <ErrorText text={this.state.error}> </ErrorText>
         );
       }
-    } else if(!this.state.doneLoading){
+    } else if (!this.state.doneLoading) {
       return (
         <MDBContainer className="page">
           <LoadingWheel/>
+          <button className="button" onClick={this.stopLoading}>End Loading</button>
         </MDBContainer>
       );
     } else {
