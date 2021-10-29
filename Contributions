@@ -1,1 +1,28 @@
+This is a detailed guide of contributions and learning experience thus far in RCOS.
 
+LEARNING THE LANGUAGE EXPRESS
+
+https://expressjs.com/en/guide/routing.html
+
+https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/Introduction
+
+These two sites are mainly what I used to extensively research express. Routing is a fairly new concept for me and practicing express has
+been opened me up to a lot of these concepts.
+
+LEARNING THE LANGUAGE REACT
+
+https://reactjs.org/docs/lists-and-keys.html
+
+https://www.freecodecamp.org/news/the-react-handbook-b71c27b0a795/
+
+These two sites are what I used to practice react. React seems more famililar and more intuitive to me than express does, because the syntax and concepts are closer
+to languages like javascript. React has been my preference over Express and am beginning to start assigning myself to issues on the frontend side.
+
+
+MY FIRST CONTRIBUTION: RESEARCHING AND WRITING UP noSQL ALTERNATIVES TO MONGODB
+
+https://github.com/PollBuddy/PollBuddy/issues/476
+
+This is my first issue and contribution to PollBuddy where I researched and wrote up a pros cons summary of 3 alternatives to mongoDB: rethinkDB, couchDB, and
+arrangoDB. At this time we decided that mongoDB is to be the best option until it becomes an actual issue in its open source licensing policies, if it comes
+to that issue we will shift to a tradition relational model (a SQL database).
